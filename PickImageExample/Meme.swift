@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class Meme {
+struct Meme {
     
     var textTop: String!
      var textBottom: String!

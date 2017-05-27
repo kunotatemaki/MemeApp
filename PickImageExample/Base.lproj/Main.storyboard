@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZhO-xy-F2N">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,14 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="arR-Zc-6Oe">
-                                <rect key="frame" x="16" y="64" width="343" height="559"/>
-                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" translatesAutoresizingMaskIntoConstraints="NO" id="XTx-6Q-jDV">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="l9Z-3D-lxZ"/>
                                     <barButtonItem title="Gallery" width="100" id="STH-ha-w3U">
@@ -44,21 +41,24 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ofo-hX-6OT">
-                                <rect key="frame" x="32" y="84" width="311" height="17"/>
+                                <rect key="frame" x="32" y="84" width="256" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oxp-nH-wMM">
-                                <rect key="frame" x="32" y="586" width="311" height="17"/>
+                                <rect key="frame" x="32" y="414" width="256" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="arR-Zc-6Oe">
+                                <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="arR-Zc-6Oe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7rY-TM-ihg"/>
+                            <constraint firstItem="arR-Zc-6Oe" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="4OZ-My-gRw"/>
                             <constraint firstItem="ofo-hX-6OT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="8SA-zv-hKV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Oxp-nH-wMM" secondAttribute="trailing" constant="16" id="BGs-FK-f0O"/>
                             <constraint firstItem="arR-Zc-6Oe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Bga-8E-UOf"/>
@@ -66,9 +66,9 @@
                             <constraint firstItem="ofo-hX-6OT" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-16" id="Iky-RB-q0Y"/>
                             <constraint firstItem="Oxp-nH-wMM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="JdA-Sd-SwY"/>
                             <constraint firstItem="XTx-6Q-jDV" firstAttribute="top" secondItem="arR-Zc-6Oe" secondAttribute="bottom" id="MfN-mz-Edy"/>
-                            <constraint firstItem="XTx-6Q-jDV" firstAttribute="top" secondItem="Oxp-nH-wMM" secondAttribute="bottom" constant="20" id="STG-bN-Pf3"/>
+                            <constraint firstItem="XTx-6Q-jDV" firstAttribute="top" secondItem="Oxp-nH-wMM" secondAttribute="bottom" constant="5" id="Mvs-4G-Yow"/>
                             <constraint firstAttribute="trailing" secondItem="XTx-6Q-jDV" secondAttribute="trailing" id="aPi-vf-uI7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="arR-Zc-6Oe" secondAttribute="trailing" id="d2C-cn-K9M"/>
+                            <constraint firstItem="arR-Zc-6Oe" firstAttribute="trailing" secondItem="XTx-6Q-jDV" secondAttribute="trailing" id="bIC-NP-P2g"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XTx-6Q-jDV" secondAttribute="bottom" id="hSc-Ky-QiG"/>
                             <constraint firstItem="XTx-6Q-jDV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="w49-PR-gxy"/>
                         </constraints>
@@ -96,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055.2" y="120.98950524737631"/>
+            <point key="canvasLocation" x="1054.6875" y="120.70312499999999"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Abh-nG-NjM">
