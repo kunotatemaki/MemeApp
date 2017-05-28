@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZhO-xy-F2N">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,6 +9,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="911Fonts.com_ImpactRegular__-_911fonts.com-fonts-4mSI.ttf">
+            <string>Impact</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Meme View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -19,11 +24,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" translatesAutoresizingMaskIntoConstraints="NO" id="XTx-6Q-jDV">
-                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="l9Z-3D-lxZ"/>
                                     <barButtonItem title="Gallery" width="100" id="STH-ha-w3U">
@@ -32,7 +37,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ax1-zn-LFL"/>
-                                    <barButtonItem tag="1" title="Camera" width="100" id="AHz-4f-kxj" userLabel="Camera">
+                                    <barButtonItem tag="1" systemItem="camera" id="AHz-4f-kxj" userLabel="Camera">
                                         <connections>
                                             <action selector="pickImage:" destination="BYZ-38-t0r" id="4ll-tX-PJh"/>
                                         </connections>
@@ -40,21 +45,21 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="NV4-ds-hbk"/>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ofo-hX-6OT">
-                                <rect key="frame" x="32" y="84" width="256" height="17"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oxp-nH-wMM">
-                                <rect key="frame" x="32" y="414" width="256" height="17"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="arR-Zc-6Oe">
-                                <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ofo-hX-6OT">
+                                <rect key="frame" x="32" y="84" width="256" height="49"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oxp-nH-wMM">
+                                <rect key="frame" x="32" y="470" width="256" height="49"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

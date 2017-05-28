@@ -9,41 +9,29 @@
 import Foundation
 import UIKit
 
-class BottomTextFieldDelegate: NSObject, UITextFieldDelegate, TextFieldProtocol{
+class BottomTextFieldDelegate: TextFieldDelegate{
     
     // default values for the text field
-    let bottomText = "BOTTOM"
-    let controller: MemeViewController!
 
     let container: UIView!
     
     init(screenView: UIView!, controller: MemeViewController!) {
         container = screenView
-        self.controller = controller
+        super.init(controller: controller, text: "BOTTOM")
     }
     
     // verify if the textfield have the defaul text when the
     // user start to edit
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    override func textFieldDidBeginEditing(_ textField: UITextField) {
         subscribeToKeyboardNotification()
-        
-        var currentText = textField.text
-        
-        if currentText == bottomText {
-            currentText = ""
-        }
-        
-        textField.text = currentText
+        super.textFieldDidBeginEditing(textField)
     }
     
     // dismiss the keyboard
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let ok = super.textFieldShouldReturn(textField)
         unsubscribeFromKeyboardNotification()
-        
-        restoreInitialText(textField, false)
-        
-        return true
+        return ok;
     }
     
     //MARK: keyboard layout functions
@@ -80,19 +68,4 @@ class BottomTextFieldDelegate: NSObject, UITextFieldDelegate, TextFieldProtocol{
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
-        restoreInitialText(textField, false)
-    }
-    
-    func restoreInitialText(_ textField: UITextField, _ force: Bool){
-        if textField.text == "" || force == true {
-            textField.text = bottomText
-        }
-        controller.checkShareButtom()
-
-    }
-    
-    func isInInitialState(_ text: String) -> Bool{
-        return text.isEqual(bottomText)
-    }
 }

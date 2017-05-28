@@ -18,6 +18,8 @@
 		79B94D3C1ED9CDC1005965C5 /* BottomTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B94D391ED9CDC1005965C5 /* BottomTextFieldDelegate.swift */; };
 		79B94D3D1ED9CDC1005965C5 /* ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B94D3A1ED9CDC1005965C5 /* ImagePickerDelegate.swift */; };
 		79B94D3E1ED9CDC1005965C5 /* TopTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B94D3B1ED9CDC1005965C5 /* TopTextFieldDelegate.swift */; };
+		79B94D401EDAE0DC005965C5 /* 911Fonts.com_ImpactRegular__-_911fonts.com-fonts-4mSI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79B94D3F1EDAE0DC005965C5 /* 911Fonts.com_ImpactRegular__-_911fonts.com-fonts-4mSI.ttf */; };
+		79B94D431EDAE329005965C5 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B94D421EDAE329005965C5 /* TextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		79B94D391ED9CDC1005965C5 /* BottomTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDelegate.swift; sourceTree = "<group>"; };
 		79B94D3A1ED9CDC1005965C5 /* ImagePickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerDelegate.swift; sourceTree = "<group>"; };
 		79B94D3B1ED9CDC1005965C5 /* TopTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTextFieldDelegate.swift; sourceTree = "<group>"; };
+		79B94D3F1EDAE0DC005965C5 /* 911Fonts.com_ImpactRegular__-_911fonts.com-fonts-4mSI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "911Fonts.com_ImpactRegular__-_911fonts.com-fonts-4mSI.ttf"; path = "Resources/911Fonts.com_ImpactRegular__-_911fonts.com-fonts-4mSI.ttf"; sourceTree = "<group>"; };
+		79B94D421EDAE329005965C5 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		79B38CD01ED5992200B02742 /* MemeApp */ = {
 			isa = PBXGroup;
 			children = (
+				79B94D411EDAE0E1005965C5 /* Resources */,
 				79B94D361ED99621005965C5 /* Utils */,
 				79B94D331ED988E7005965C5 /* Model */,
 				79B94D301ED836E2005965C5 /* Controllers */,
@@ -86,6 +91,7 @@
 				79B94D391ED9CDC1005965C5 /* BottomTextFieldDelegate.swift */,
 				79B94D3A1ED9CDC1005965C5 /* ImagePickerDelegate.swift */,
 				79B94D3B1ED9CDC1005965C5 /* TopTextFieldDelegate.swift */,
+				79B94D421EDAE329005965C5 /* TextFieldDelegate.swift */,
 				79B94D311ED8472D005965C5 /* TextFieldProtocol.swift */,
 			);
 			name = Delegates;
@@ -113,6 +119,14 @@
 				79B94D371ED9963B005965C5 /* MemeUtils.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		79B94D411EDAE0E1005965C5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				79B94D3F1EDAE0DC005965C5 /* 911Fonts.com_ImpactRegular__-_911fonts.com-fonts-4mSI.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +192,7 @@
 				79B38CDC1ED5992200B02742 /* LaunchScreen.storyboard in Resources */,
 				79B38CD91ED5992200B02742 /* Assets.xcassets in Resources */,
 				79B38CD71ED5992200B02742 /* Main.storyboard in Resources */,
+				79B94D401EDAE0DC005965C5 /* 911Fonts.com_ImpactRegular__-_911fonts.com-fonts-4mSI.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +205,7 @@
 			files = (
 				79B94D3D1ED9CDC1005965C5 /* ImagePickerDelegate.swift in Sources */,
 				79B94D351ED9892C005965C5 /* Meme.swift in Sources */,
+				79B94D431EDAE329005965C5 /* TextFieldDelegate.swift in Sources */,
 				79B38CD41ED5992200B02742 /* MemeViewController.swift in Sources */,
 				79B94D321ED8472D005965C5 /* TextFieldProtocol.swift in Sources */,
 				79B94D3E1ED9CDC1005965C5 /* TopTextFieldDelegate.swift in Sources */,

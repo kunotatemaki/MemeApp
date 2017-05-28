@@ -32,7 +32,7 @@ class MemeViewController: UIViewController {
     let memeTextAttributes:[String:Any] = [
         NSStrokeColorAttributeName: UIColor.black,
         NSForegroundColorAttributeName: UIColor.white,
-        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSFontAttributeName: UIFont(name: "Impact", size: 40)!,
         NSStrokeWidthAttributeName: NSNumber(value: -3.0 as Float)]
     
     
@@ -110,7 +110,6 @@ class MemeViewController: UIViewController {
         shareScreen = generateMemedImage()
         
         let activityViewController = UIActivityViewController(activityItems: [shareScreen], applicationActivities: nil)
-        //        activityViewController.completionWithItemsHandler = completeSharingActivity
         activityViewController.popoverPresentationController?.sourceView = self.view
         present(activityViewController, animated: true, completion: {
             activityViewController.completionWithItemsHandler = { activity, success, items, error in
@@ -136,9 +135,7 @@ class MemeViewController: UIViewController {
     // Save the meme, at moment just in memory
     func save() {
         let fileName = MemeUtils().getDateTimeAsString()
-        memeData = Meme(top: topText.text!, bottom: bottomText.text!, original: imageView.image!, memed: shareScreen, path: fileName)
-        
-        
+        memeData = Meme(textTop: topText.text!, textBottom: bottomText.text!, originalImage: imageView.image!, memeImage: shareScreen, fileName: fileName)
     }
 
     
@@ -148,8 +145,8 @@ class MemeViewController: UIViewController {
         setToolbarHidden(true)
         
         // Render view to an image
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         

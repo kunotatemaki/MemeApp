@@ -17,15 +17,5 @@ struct Meme {
      var originalImage: UIImage!
      var memeImage: UIImage!
     var fileName: String!
-    
-    
-    
-    init(top: String, bottom: String, original: UIImage, memed: UIImage, path: String) {
-        
-        textTop = top
-        textBottom = bottom
-        originalImage = original
-        memeImage = memed
-        fileName = path
-    }
+
 }
