@@ -23,7 +23,6 @@ class MemeViewController: UIViewController {
     var pickerDelegate: ImagePickerDelegate!
     var topTextDelegate: TopTextFieldDelegate!
     var bottomTextDelegate: BottomTextFieldDelegate!
-    var memeData: Meme?
     var shareScreen:UIImage!
     
     let TOP_MESSAGE = "TOP"
@@ -44,14 +43,18 @@ class MemeViewController: UIViewController {
         super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         checkShareButtom()
-        
+        self.tabBarController?.tabBar.isHidden = true
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         pickerDelegate = ImagePickerDelegate(view: imageView, controller: self)
         topTextDelegate = TopTextFieldDelegate(controller: self)
         bottomTextDelegate = BottomTextFieldDelegate(screenView: view, controller: self)
@@ -115,6 +118,7 @@ class MemeViewController: UIViewController {
             activityViewController.completionWithItemsHandler = { activity, success, items, error in
                 
                 if !success { print("cancelled")
+                    self.save()
                     return
                 }
                 
@@ -135,7 +139,12 @@ class MemeViewController: UIViewController {
     // Save the meme, at moment just in memory
     func save() {
         let fileName = MemeUtils().getDateTimeAsString()
-        memeData = Meme(textTop: topText.text!, textBottom: bottomText.text!, originalImage: imageView.image!, memeImage: shareScreen, fileName: fileName)
+        let memeData = Meme(textTop: topText.text!, textBottom: bottomText.text!, originalImage: imageView.image!, memeImage: shareScreen, fileName: fileName)
+        
+        // Add it to the memes array in the Application Delegate
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(memeData)
     }
 
     
@@ -174,6 +183,8 @@ class MemeViewController: UIViewController {
     func checkShareButtom() {
         shareButton.isEnabled = canShare()
     }
+    
+   
     
 }
 
