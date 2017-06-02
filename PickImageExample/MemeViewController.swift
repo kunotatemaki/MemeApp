@@ -27,6 +27,7 @@ class MemeViewController: UIViewController {
     
     let TOP_MESSAGE = "TOP"
     let BOTTOM_MESSAGE = "BOTTOM"
+    var meme: Meme?
     
     let memeTextAttributes:[String:Any] = [
         NSStrokeColorAttributeName: UIColor.black,
@@ -61,11 +62,23 @@ class MemeViewController: UIViewController {
         
         topText.delegate = topTextDelegate
         bottomText.delegate = bottomTextDelegate
+        setToolbarHidden(false)
+        if let meme = meme{
+            setupTextField(topText, withText: meme.textTop)
+            setupTextField(bottomText, withText: meme.textBottom)
+        }else{
+            setupTextField(topText, withText: TOP_MESSAGE)
+            setupTextField(bottomText, withText: BOTTOM_MESSAGE)
+        }
         
-        setupTextField(topText, withText: TOP_MESSAGE)
-        setupTextField(bottomText, withText: BOTTOM_MESSAGE)
-       
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let meme = meme{
+            imageView.image = meme.originalImage
+            imageView.contentMode = UIViewContentMode.scaleAspectFit
+        }
+        checkShareButtom()
     }
 
     // setup the text fields with the desired properties
@@ -98,6 +111,7 @@ class MemeViewController: UIViewController {
     
     
     @IBAction func cancelMeme(_ sender: Any) {
+        
         imageView.image = nil
         let delBottom = bottomText.delegate as! BottomTextFieldDelegate
         delBottom.restoreInitialText(bottomText.self, true)

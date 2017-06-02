@@ -49,20 +49,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="arR-Zc-6Oe">
                                 <rect key="frame" x="0.0" y="64" width="320" height="411"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ofo-hX-6OT">
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ofo-hX-6OT">
                                 <rect key="frame" x="32" y="84" width="256" height="49"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oxp-nH-wMM">
+                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oxp-nH-wMM">
                                 <rect key="frame" x="32" y="421" width="256" height="49"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="arR-Zc-6Oe" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="4OZ-My-gRw"/>
                             <constraint firstItem="ofo-hX-6OT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="8SA-zv-hKV"/>
@@ -73,8 +73,8 @@
                             <constraint firstItem="Oxp-nH-wMM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="JdA-Sd-SwY"/>
                             <constraint firstItem="XTx-6Q-jDV" firstAttribute="top" secondItem="arR-Zc-6Oe" secondAttribute="bottom" id="MfN-mz-Edy"/>
                             <constraint firstItem="XTx-6Q-jDV" firstAttribute="top" secondItem="Oxp-nH-wMM" secondAttribute="bottom" constant="5" id="Mvs-4G-Yow"/>
+                            <constraint firstItem="arR-Zc-6Oe" firstAttribute="trailing" secondItem="XTx-6Q-jDV" secondAttribute="trailing" id="PxB-qh-rNf"/>
                             <constraint firstAttribute="trailing" secondItem="XTx-6Q-jDV" secondAttribute="trailing" id="aPi-vf-uI7"/>
-                            <constraint firstItem="arR-Zc-6Oe" firstAttribute="trailing" secondItem="XTx-6Q-jDV" secondAttribute="trailing" id="bIC-NP-P2g"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XTx-6Q-jDV" secondAttribute="bottom" id="hSc-Ky-QiG"/>
                             <constraint firstItem="XTx-6Q-jDV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="w49-PR-gxy"/>
                         </constraints>
@@ -120,7 +120,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SIg-W2-UoU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Za-pa-DnS">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
@@ -136,7 +135,6 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="SIg-W2-UoU" firstAttribute="height" secondItem="lNj-Bx-DpU" secondAttribute="height" id="67L-R7-6bv"/>
                             <constraint firstItem="SIg-W2-UoU" firstAttribute="centerX" secondItem="lNj-Bx-DpU" secondAttribute="centerX" id="JiN-aS-6C5"/>
@@ -170,27 +168,43 @@
             </objects>
             <point key="canvasLocation" x="-3056" y="192"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Table Meme View Controller-->
         <scene sceneID="oSM-Vh-Tcz">
             <objects>
-                <tableViewController id="CHh-E4-JCt" sceneMemberID="viewController">
+                <tableViewController id="CHh-E4-JCt" customClass="TableMemeViewController" customModule="MemeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2I7-XR-5EF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HAZ-2R-lYq">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemeTableCell" textLabel="gm0-5u-9eU" detailTextLabel="5Is-4p-n31" style="IBUITableViewCellStyleSubtitle" id="HAZ-2R-lYq">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HAZ-2R-lYq" id="wKm-Qj-0Ig">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gm0-5u-9eU">
+                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Is-4p-n31">
+                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="CHh-E4-JCt" id="TjM-9V-XUA"/>
-                            <outlet property="delegate" destination="CHh-E4-JCt" id="kop-2J-3Dp"/>
+                            <outlet property="dataSource" destination="CHh-E4-JCt" id="CoW-Yf-U7y"/>
+                            <outlet property="delegate" destination="CHh-E4-JCt" id="owB-Ec-MvZ"/>
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="" image="table" selectedImage="table" id="HOW-cO-egM"/>
@@ -276,6 +290,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zTQ-6q-qa9"/>
+        <segue reference="Pkb-f2-khS"/>
     </inferredMetricsTieBreakers>
 </document>

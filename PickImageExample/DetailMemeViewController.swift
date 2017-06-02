@@ -39,6 +39,10 @@ class DetailMemeViewController: UIViewController {
         self.memeView!.image = meme.memeImage
         self.memeView!.contentMode = UIViewContentMode.scaleAspectFit
         
- 
-        
-    }}
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        let controller = segue.destination as! MemeViewController
+        controller.meme = meme    }
+}

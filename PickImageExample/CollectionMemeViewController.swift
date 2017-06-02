@@ -23,14 +23,13 @@ class CollectionMemeViewController: UICollectionViewController, SharedModelProto
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.memes.count
+        return getMemes().count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
-                let meme = getMemes()[indexPath.row]
+        let meme = getMemes()[indexPath.row]
         
         // Set the name and image
         cell.memeImageView?.image = meme.memeImage
