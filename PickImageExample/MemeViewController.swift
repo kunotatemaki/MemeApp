@@ -132,7 +132,6 @@ class MemeViewController: UIViewController {
             activityViewController.completionWithItemsHandler = { activity, success, items, error in
                 
                 if !success { print("cancelled")
-                    self.save()
                     return
                 }
                 

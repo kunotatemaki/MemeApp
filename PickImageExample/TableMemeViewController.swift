@@ -52,7 +52,31 @@ class TableMemeViewController: UITableViewController{
         return appDelegate.memes
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            }
+    func setMemes(_ memes: [Meme]) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes = memes
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            handleDeleteMeme(indexPath as NSIndexPath)
+        }
+    }
+    
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    func handleDeleteMeme(_ posicion: NSIndexPath!) -> Void {
+        tableView.beginUpdates()
+        var memes: [Meme]!
+        memes = getMemes()
+        memes.remove(at: posicion.row)
+        setMemes(memes)
+        tableView.deleteRows(at: [posicion as IndexPath], with: .automatic)
+        tableView.endUpdates()
+    }
     
 }
