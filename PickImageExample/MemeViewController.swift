@@ -132,10 +132,12 @@ class MemeViewController: UIViewController {
             activityViewController.completionWithItemsHandler = { activity, success, items, error in
                 
                 if !success { print("cancelled")
+                    self.save()
+                    self.navigationController?.popViewController(animated: true)
                     return
                 }
-                
                 self.save()
+                self.navigationController?.popViewController(animated: true)
             }
         })
     }
@@ -183,14 +185,7 @@ class MemeViewController: UIViewController {
     }
     
     fileprivate func canShare() -> Bool{
-        let topDel = topText.delegate as! TopTextFieldDelegate
-        let bottomDel = bottomText.delegate as! BottomTextFieldDelegate
-        print("imagen \(imageView.image != nil)")
-        print("top: \(topText.text!) : \(!topDel.isInInitialState(topText.text!))")
-        print("bottom: \(bottomText.text!) : \(!bottomDel.isInInitialState(bottomText.text!))")
-        return (imageView.image != nil
-        && !topDel.isInInitialState(topText.text!)
-        && !bottomDel.isInInitialState(bottomText.text!))
+        return (imageView.image != nil)
     }
     
     func checkShareButtom() {
